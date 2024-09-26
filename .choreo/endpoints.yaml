@@ -1,0 +1,23 @@
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
+metadata:
+  name: spring-boot-test
+spec:
+  type: api
+  source:
+    git:
+      repositoryUrl: https://github.com/nalakadissnayake/spring-boot-test.git
+      branch: master  # Specify the branch to deploy
+      context: /  # Root directory or specify where the app resides within the repo
+    build:
+      runtime: java-17  # Set the correct runtime (Java version)
+      buildCommand: mvn clean package
+      startCommand: java -jar target/api-0.0.1-SNAPSHOT.jar
+  ports:
+    - containerPort: 8080
+      protocol: HTTP
+  routes:
+    - path: /hello
+      method: GET
+      target:
+        containerPort: 8080

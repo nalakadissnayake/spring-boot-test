@@ -1,0 +1,8 @@
+apiVersion: choreo.wso2.com/v1alpha1
+kind: Component
+metadata:
+  name: spring-boot-test
+spec:
+  componentDefinition:
+    name: spring-boot-test-component
+    version: v1.0.0

@@ -1,5 +1,5 @@
-apiVersion: choreo.wso2.com/v1alpha1
-kind: Component
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
 metadata:
   name: spring-boot-test
 spec:

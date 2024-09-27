@@ -1,23 +1,12 @@
 apiVersion: core.choreo.dev/v1beta1
-kind: ComponentConfig
+kind: Endpoint
 metadata:
   name: spring-boot-test
 spec:
-  type: api
-  source:
-    git:
-      repositoryUrl: https://github.com/nalakadissnayake/spring-boot-test.git
-      branch: master
-      context: /
-    build:
-      runtime: java-17
-      buildCommand: mvn clean package
-      startCommand: mvn spring-boot:run
-  ports:
-    - containerPort: 8080
-      protocol: HTTP
-  routes:
-    - path: /hello
-      method: GET
-      target:
-        containerPort: 8080
+  host: spring-boot-test.choreo.dev
+  paths:
+    - path: /*
+      backend:
+        service:
+          name: spring-boot-test
+          port: 8080

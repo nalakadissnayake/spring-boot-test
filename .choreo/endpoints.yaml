@@ -1,12 +1,19 @@
-apiVersion: core.choreo.dev/v1beta1
-kind: Endpoint
-metadata:
-  name: spring-boot-test
-spec:
-  host: spring-boot-test.choreo.dev
-  paths:
-    - path: /*
-      backend:
-        service:
-          name: spring-boot-test
-          port: 8080
+#apiVersion: core.choreo.dev/v1beta1
+#kind: Endpoint
+#metadata:
+#  name: spring-boot-test
+#spec:
+#  host: spring-boot-test.choreo.dev
+#  paths:
+#    - path: /*
+#      backend:
+#        service:
+#          name: spring-boot-test
+#          port: 8080
+
+
+version: 0.1
+endpoints:
+  - name: Hello
+    port: 8080
+    type: REST
